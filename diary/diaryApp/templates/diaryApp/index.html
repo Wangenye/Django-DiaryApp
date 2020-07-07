@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary</title>
+    <link rel="stylesheet" href="{%static 'css/index.css' %}">
+    {% block addcss %}{% endblock %}
+</head>
+
+<body>
+    <div id="title">
+        <h1>Dear Diary</h1>
+    </div>
+    {% block changeurl %}
+    <div class="url">
+        <a id="url" href="{% url 'addentry' %} ">Add Entry</a>
+        <hr class="one">
+    </div>
+
+
+    {% endblock %}
+
+
+    {% block content %}
+    {% for entry in entries %}
+    <div class="entries">
+        <div class="datetime">
+            <ul>
+                <li>{{entry.date_posted}} ,</li>
+                <li>{{entry.time_posted}}.</li>
+            </ul>
+        </div>
+        <!-- <div class="date"></div> -->
+        <div class="content">
+
+            <p>{{entry.body}}</p>
+
+            <!-- <a id="update" href="{% url 'update_task' entry.id  %}">Update</a> -->
+            <div>
+                <a id="update" href="{% url 'update_task' entry.id  %}">Update</a>
+            </div>
+        </div>
+        <!-- <div>
+            <a id="update" href="{% url 'update_task' entry.id  %}">Update</a>
+        </div> -->
+
+
+
+    </div>
+    {% endfor %}
+    <!-- <hr> -->
+
+
+    {% endblock %}
+</body>
+
+</html>
+
+
+<!-- {% for entry in entries %}
+
+<p> {{entry.body}}<br>
+    {{entry.time_posted}}<br>
+    {{entry.date_posted}} <br>
+</p>
+
+{% endfor %} -->

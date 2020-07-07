@@ -1,0 +1,41 @@
+#form{
+    position: relative;
+    display: flex;
+    top: 50px;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    /* background-color: yellow; */
+}
+button{
+    border-radius: 8px;
+    padding: 10px;
+    /* width: 60px; */
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: cadetblue;
+    color: white;
+
+}
+textarea{
+     letter-spacing: 2px;
+     /* width: 850px; */
+     word-wrap: break-word;
+     white-space: normal;
+     left: 0;
+     top: 0;
+     margin: 0;
+    /* word-spacing: 3px;
+    line-height: 25px;
+    margin-left: 40px; */
+}
+#tr{
+    width: 500px;
+}
+#update{
+    
+    background-color: rgb(24, 158, 24);
+    color: white;
+}

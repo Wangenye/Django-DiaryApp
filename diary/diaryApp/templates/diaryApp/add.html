@@ -1,0 +1,27 @@
+{% extends 'diaryApp/index.html'%}
+{%load static %}
+{% block addcss %}
+<link rel="stylesheet" href="{% static 'css/add.css' %}">
+{% endblock %}
+
+{% block changeurl %}
+<div class="url">
+    <a id="url" href="{% url 'homepage' %} ">Back</a>
+    <hr class="one">
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+<div id="form">
+    <form action="." method="POST">
+        {% csrf_token %}
+        <!-- {{form.body}} -->
+        <pre><textarea name="body" value="body" id="" cols="100" rows="10" placeholder="Dear diary today ...">
+        </textarea>
+        </pre>
+        <button type="submit">Save</button>
+    </form>
+</div>
+{% endblock %}
